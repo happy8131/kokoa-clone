@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="img/logo.png" />
+    <title>Home - my first website.</title>
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      div {
+        background-color: teal;
+        width: 200px;
+        height: 200px;
+      }
+      @media screen and (max-width: 800px) {
+        div {
+          background-color: tomato;
+        }
+      }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="description" content="this is mywebsite" />
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
+
+<!-- a = anchor를 뜻함 (link를 떠올리면 됨) (추가적인 정보가 필요함) attributes =
+태그에 추가하는 정보 href = http reference라고 함 (anchor 태그에만 추가 가능)
+target = 기본값은 self이고, _blank 입력 시 새 탭에서 링크가 열림 
+img = 다른
+태그와 다르게 /로 닫는 태그가 없다 (자체 닫기 태그이기 때문) src = img 안에
+사진을 집어넣음 (img에서 작동) 
+
+
+html 파일은 정해진 작성 형식과 문법이 있음
+!DOCTYPE html 로 현재 파일이 html 파일이라는 것을 알림
+html tag 안에 모든 내용은 html tag 문법의 영향을 받고 html 문서임
+html 문서는 크게 두 부분으로 나누어진다. head 와 body
+head : html 문서의 configuration 을 주로 설정함, html 문서에 대한 meta 정보들..
+대표적인 예가 title , title tag 는 html 문서 제목을 정하여 브라우저에게 알려준다
+body : 웹사이트에서 contents 를 보여주는 부분, 뭔가 보여주려면 여기에 작성하여야 함
+
+meta tag = 부가적인 요소 라는 뜻 (content, name attribute를 가짐)
+meta charset="utf-8" 매우 중요(브라우저에게 text를 어떻게 그려달라는지 말해준다)
+-한글이나 다른 특수문자가 있는 언어를 입력 할 때 브라우저가 그 문자들을 이해 못 할 때가 있다.
+그래서 이 charset 메타 태그가 없으면 글자가 사이트에서 깨져보일 것이다. 꼭 잊지말고 기입하자.
+language = 사이트에 사용되는 언어 표기 (검색엔진에게 알려줌)
+다른 수많은 meta tag들이 있음
+HEAD 태그는 보이지 않는 사이트 설정들을 바꿔준다!! (중요)
+og:~~~ = 카카오톡에서 사용하는 정보들
+
+#2.7
+mdn : html, css, js 검색할때 사용함
+cite : 글씨체 기울임
+mark : 글씨 배경 색칠
+...
+태그를 한번에 바꾸고 싶으면 바꿀 위치 선택후 ctl+d
+
+mdn : 문서 한글화 지원
+
+태그는 암기하지말고 mdn에서 찾아볼것!
+
+
+- semantic 태그로 코드를 작성 하는 것은 매우 중요하다. 작성된 코드들이 훨씬 더 보기 좋고, 좋은
+프로그래머가 되기 위해서는 필수 사항이다.
+- header, main, footer, navigation, hgroup 등 <>속 태그들은 전부 container이다. 전부 div 태그로 대체 할 수 있다.
+- div 태그는 가장 통용적인 container이다. 대체가 가능하지만, 코드만 보고 어떤 의미인지 파악하기 위해서 semantic 태그를 쓰는 것이다.
+- 모든 태그를 암기 할 필요는 없다. 필요할 때마다 문서를 찾아 적용하면 된다.
+-->
+
+<!-- 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+  CSS를 HTML과 섞어내는 방법은 두 가지가 있다.
+- 1. 같은 HTML 파일에 HTML 코드와 CSS 코드를 놓는 방법
+- 2. CSS와 HTML을 분리시키는 방법
+- 같은 HTML 파일에 CSS 코드를 입히는 방법으로는 'style'태그를 이용한다.(이 때, head 안에 있어야 한다.)
+- CSS를 분리시켜 만들 때는 따로 CSS 파일을 만든다.ex) styles.css
+- HTML 파일에서 'link' 태그를 이용하여 CSS 파일과 연결한다.
+-
+- styles.css와 이 HTML과의 관계를 말할 때, styles.css는 스타일시트라 한다.
+- rel(relationship 관계)에 대해 명시해야 한다. 
+
+요약
+div는 옆에 다른 div가 오지 않는다.
+span은 옆에 다른 span이 올 수 있다.
+link는 옆에 올 수 있다.
+p는 옆에 올 수 없다.
+옆에 다른 요소가 못 오는걸 block
+올 수 있는걸 inline라고 한다. (in the same line)
+inline의 대표적인 태그 span, link, img
+
+
+- 기본적으로 span이 가지고 있는 display 속성은 inline(default값)
+- inline 요소는 높이와 너비를 가질 수 없다.
+- block은 높이와 너비가 있다.
+- box의 특징 3가지 : margin, padding, border
+- 브라우저는 기본적으로 속성을 부여하는 것이 있다. 요소 검사에서 'user agent stylesheet'라 표시된 속성이 그것.
+
+- 'margin'은 box의 border(경계)의 바깥에 있는 공간
+
+ 방향 설정 없이 margin을 적용하면 상하좌우 모두 적용된다.
+- margin : 0, 0; (상하, 좌우) 0, 0, 0, 0;(상, 우, 하, 좌 ⇒ 시계방향)
+- collapsing margins 현상 : 흰 box의 경계가 보라색 box의 경계와 같다면 이 두 margin은 하나로 취급된다.(위, 아래쪽에서만 일어난다.)
+
+Padding을 사용하여 body 구역과 box구역의 경계를 만들어 주는 것이다.
+* 크롬에서는 이 padding구역을 녹색으로 따로 표현하였다.
+
+다음으로 내가 원하는 id만 가리키는 방법에 대해 다루어 보았다.
+id는 unique 해야 하고 CSS코드 내의 id와 HTML코드 내의 id는 일치해야 한다.
+'#id이름'이런 식으로 CSS코드 내에서 id를 지정해야 원하는 코드를 부를 수 있다.
+
+border는 box의 경계이다.
+*는 전체를 뜻한다.
+border : 굵기, 스타일, 색상 순이다.
+- border은 inline과 block 모두에 적용된다.
+
+
+ span은 inline이기 때문에 높이와 너비를 가질 수 없으며, 그래서 위, 아래에 margin을 가질 수 없다.
+- 하지만 padding은 사방에 가질 수 있다.
+- 이와 같은 상황에 margin을 위, 아래에 적용하고 싶다면, inline 요소를 block으로 바꿔줘야 한다.
+- 온점(.)은 class명이라는 뜻.
+- id⇒ #tomato는 id="tomato" class⇒ .tomato는 class="tomato"
+- id명과 다르게 class명은 유일할 필요가 없다. 여러 요소들이 같이 쓸 수 있다.
+- 와 같이 class 속에는 btn과 tomato를 연이어 넣어 각각 다른 class 속성을 동시에 부여할 수도 있다.
+
+요약
+block 속성을 inline로 바꾸고, width와 height를 가지게 하고 싶을 때는 inline-block을 사용한다.
+하지만 많은 문제가 있고, 오래됐기 대문에 잘 사용하지 않음.
+(반응형 디자인을 지원하지 않는다.)
+
+flexbox 사용 규칙
+1. 자식 엘리먼트에는 어떤 것도 적지 말아야 함.
+자식 엘리먼트를 움직이게 하려면 부모 엘리먼트를 flex container로 만들어야 한다.
+2. align-items : cross axis에서 작용 (세로)
+3. justify-content : main axis에서 작용 (가로) (디폴트)
+flex-container가 height를 가지고 있지 않으면 align-items를 사용하더라도 위치가 바뀌지 않음.
+vh = viewport height (스크린에 따라 다름)
+
+Flex-direction : 기본적으론 row (수평)
+Justify-content: 수평 / align-items: 수직
+
+- Flex-direction: column (수직)
+Justify-content: 수직 / align-items: 수평
+
+
+- Flex-wrap: wrap/ nowrap
+Wrap : block 이 겹치지 않게
+
+
+- Flex-direction: column-reverse
+- Flex-direction: row-reverse
+- Flex-wrap: wrap-reverse
+
+
+position fixed => 초기 위치에 고정시켜줌. 다른 레이어 상에서 자리잡음.
+top, right, bottom, left => margin과 초기 위치 등이 무시되고 명령한 위치에 자리잡음
+======================================
+#green과 #different를 그냥 만들었을 때 두 box가 위 아래로 겹침 => 서로 동일 레이어에 있기 때문에 박스가 순서대로 쌓임
+#green를 position:fixed 시키고 #different를 그냥 만들었을 때 겹침=>서로
+새로운 레이어에 위치하기 때문에 둘다 첫번째 위치에 자리잡음(#different 박스도 뒷쪽 레이어에서 첫번째 박스)
+
+
+1. position: static (default) - 박스를 처음 위치한 곳에 두는 것
+2. position: fixed - 처음에 위치한 자리에서 화면의 스크롤에 상관없이 고정되는 것, top,bottom, left, right 속성을 줘서 고정된 위치 이동시킬 수 있음. 단 이동이 되면 가장 위의 새 레이어에 놓이게됨
+3. position : relative - 박스가 처음 위치한 곳을 기준으로 이동,
+top,bottom, left, right 속성을 주면 첫 위치를 기준으로 이동됨
+4. position : absolute - 가장 가까운 부모 엘리먼트에 position:relative를 추가한다면, 그 부모 기준으로 top,bottom,left,right이동하고/ 아닐시엔 body 기준으로 이동된다
+
+
+1.pseudo selector : 더 세부적으로 element를 선택해주는것, 기존에는 #id, .class를 통해 선택자를지정했었음
+2.div: first-child ->첫번째 자식 div태그 선택 ,div:second-child->두번째 자식 div태그선택
+span:nth-child(2n + 1) -> 첫번째 span 부터 2개씩
+span:nth-child(2n + 3) -> 세번째 span 부터 2개씩
+span:nth-child(4n + 2) -> 두번째 span 부터 4개씩
+///
+states
+1) active : 대상을 클릭하고 있는 상태
+2) hover : 마우스가 대상 위에 있을때의 상태
+3) focus : active와 비슷하다고 생각될 수 있는데, 키보드로 선택되었을때를 말한다 !
+4) visited : 링크에만 적요이된다 그 링크에 방문했다면 그 안에 스타일이 적용이된다
+5) focus-within : focuse된 자식을 가진 부모 엘리먼트의 상태를 말한다
+즉, 위의 예시에서 form은 그 자식들인 input이 focuse가 되면 form의 모습을 바꾼다는 것이다
+
+
+state들을 다른 엘리먼트와 연계해서 사용할 수도 있다
+1) 부모의 state에 따라 조정
+form:hover input {
+background-color: slateblue;
+}
+즉, form이 hover일경우 input의 백그라운드 컬러가 바뀌게된다
+부모의 state에 따라 자식의 state를 조정할 수 있다
+2) 부모와 자식의 state에 따라 조정
+form:hover input:focus {
+background-color: teal;
+}
+
+#combinator
+p span{} 부모자식관계
+p>span{} 부모와 바로 밑 자식관계
+p+span{} 바로 다음에 오는 형제관계
+p~span{} 바로 다음에 오지 않아도 되는 형제관계
+
+#attribute
+input[type="word"]{} type="word"인 input만을 선택
+input[type~="word"]{} "word"를 포함하는 input선택
+input[type$="word"]{} 끝에 "word"가 오는 input 선택
+input[type^="word"]{} 앞에 "word"가 오는 input 선택
+
+#state
+:hover 커서가 올라간상태
+:active 클릭할때
+:focus 키보드로 선택한경우
+:visited link에서 쓰이고 사이트를 방문한 이력이 있을경우
+:focus-within 자식들중 하나라도 focus상태에 있다면 부모가 바뀔때 쓰임
+
+#pseudo element
+::placeholder placehoder만을 꾸밀때 사용
+::selection 드래그 했을때
+::first-letter 앞 글자에
+::first-line 첫 줄
+-->
